@@ -1,7 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card'
-import CardDeck from 'react-bootstrap/CardDeck'
-import CardGroup from 'react-bootstrap/CardGroup'
+
 import CardColumns from 'react-bootstrap/CardColumns'
 
 
