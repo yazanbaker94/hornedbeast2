@@ -4,7 +4,7 @@ export class Footer extends Component {
     render(){
         return (
             <div>
-                <h1 style={{backgroundColor : "grey", textAlign : "center"}}>Made by Yazan Baker © 2021</h1>
+                <h1 style={{backgroundColor : "grey", textAlign : "center"}}>{this.props.footer}</h1>
             </div>
         )
         }

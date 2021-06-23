@@ -1,21 +1,23 @@
 import React, { Component } from 'react'
-import data from "./data.json"
+import hornsAnimalData from './hornsAnimalData.json'
 import HornedBeast from './HornedBeast'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-export class Main extends Component {
+export class Main extends React.Component {
     render(){
         return (
             <div >
                 {
-                    data.map(beast => {
+                     this.props.data.map(item => {
                     return (
                         <HornedBeast
-                        title={beast.title}
-                        image_URL={beast.image_url}
-                        description={beast.description}
-                        />
+                        title={item.title}
+                        img_url={item.image_url}
+                        description={item.description}
+                        modal={this.props.selectedmodal}
+                    
+                    />
                     )
                     } )
                 }
