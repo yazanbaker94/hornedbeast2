@@ -26,7 +26,7 @@ import React, { Component } from 'react'
     }
 
     clickme = () => {
-        this.props.modal({
+        this.props.showModal({
             title: this.props.title,
             img_url: this.props.img_url,
             description: this.props.description

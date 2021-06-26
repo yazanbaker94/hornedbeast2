@@ -3,8 +3,8 @@ import Header from "./Header";
 import Main from "./Main";
 import hornsAnimalData from './hornsAnimalData.json'
 import SelectedBeast from './SelectedBeast'
-
 import 'bootstrap/dist/css/bootstrap.min.css';
+import FilterForm from './FilterForm'
 
 
 import Footer from "./Footer";
@@ -19,8 +19,10 @@ class App extends React.Component{
     super(props);
     this.state = {
         hornsData:hornsAnimalData,
+        hornsFiltredArr : hornsAnimalData,
         show:false,
         modaldata:{},
+        
     }
 }
 handleshow = (data) => {
@@ -35,15 +37,28 @@ handleclose = ()=>{
     })
 }
 
+updateData = (value) => {
+  this.setState({ 
+    hornsFiltredArr: value })
+}
+
+
+
   render(){
 
     
-   
+ 
     
     return(
       <div>
       <Header heading={heading}/>
-      <Main selectedmodal={this.handleshow } data={this.state.hornsData}  />
+      <FilterForm
+                    filterData={this.updateData}
+                    hornsData={this.state.hornsData}
+
+                />
+      <Main selectedmodal={this.handleshow } data={this.state.hornsFiltredArr} 
+            updateData={this.updateData} /> 
       <SelectedBeast  handleExit={this.handleclose} showdata={this.state.show } modaldata={this.state.modaldata} />
       <Footer footer={footer}/>
 
